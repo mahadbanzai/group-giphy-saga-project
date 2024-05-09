@@ -1,26 +1,28 @@
-import { Link } from 'react-router-dom'
-
+import { useState } from "react";
+import { UseDispatch, useSelector } from "react-redux";
 function Search(){
+    const [inputGifs, setInputGifs] = useState('');
+   const addGifs = (event) => {
+    event.preventDefault();
+   }
+    return(
+            
+             <div>
+                <h2>Search GIFS</h2>
+                <form> 
 
-        return(
-            <>
-            {/* <div>
-                <h2>Feeling</h2>
-                <h2>How are you feeling today:</h2>
-                <input
-                    data-testid="input"
-                    type="number"
-                    value={newFeelingRating}
-                    onChange={event => setNewFeelingRating(event.target.value)}
-                />
-                <button
-                    data-testid="next"
-                    type="submit"
-                    variant='contained'
-                    onClick={AddingFeelingRating}
-                    >NEXT</button>
-            </div> */}
-            </>
+               <input
+               placeholder="Search"
+               type = "text" 
+               value = {inputGifs}
+               onChange={(event) => setInputGifs(event.target.value)} 
+               />
+                <button onClick={addGifs}>Submit</button>
+
+                </form>
+
+             </div> 
+               
         )
 }
 export default Search;

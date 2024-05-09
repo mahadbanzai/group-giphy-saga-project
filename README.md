@@ -27,14 +27,24 @@ You will need 2 views for the base features. You should put some thought into th
 
 ### Search View
 
-- Allow a user to enter a search string and submit a search request.
-- Query the `Giphy API Search Endpoint` with the given search string **FROM THE SERVER**.
+- Allow a user to enter a search string and submit a search request. 
+
+(Allow the user to be able to put an input and submit a search onclick request )
+
+- Query the `Giphy API Search Endpoint` with the given search string **FROM THE SERVER**. 
+
+("Request the Giphy API Search Endpoint using the provided search string FROM THE SERVER.")
+
 - Display the results on the DOM.
-- Allow a user to "favorite" any of the resulting images. You'll need to think about what information to save to your own database. Generally you only store the minimum needed to show this image again on the **Favorites View**.
+
+- Allow a user to "favorite" any of the resulting images. You'll need to think about what information to save to your own database. Generally you only store the minimum needed to show this image again on the **Favorites View**. 
+
+(Be mindful of what each giphy truly contains and use only of the data what you actually need. Possibly create a favorites button to push data into the database? )
 
 ### Favorites View
 
-- Allow a user to see all of the Giphy images they have made a favorite. The actual images need to appear on the DOM.
+- Allow a user to see all of the Giphy images they have made a favorite. The actual images need to appear on the DOM. 
+(Render the favorited images on a favorited page )
 - Allow a user to set a category for a favorite image.
     - Each favorite image can only have one category at a time.
     - The category needs to be one of the categories in the database.
