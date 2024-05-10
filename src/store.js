@@ -2,12 +2,13 @@ import logger from "redux-logger";
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import axios from "axios";
+import {takeLatest, put} from "redux-saga/effects";
 
 function* fetchGifs (action){
     try{
         let response = yield axios ({
             method: 'GET',
-            url: '/api/favorites'
+            url: `?=${action.payload}`
         })
             yield put ({
                 type: 'SET_GIFS',
@@ -15,7 +16,7 @@ function* fetchGifs (action){
             });
         } catch(error) {
             console.log('Unable to get favorite from server', error);
-        }
+        } 
 }
 
 function* rootSaga() {

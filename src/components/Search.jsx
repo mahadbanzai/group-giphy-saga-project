@@ -1,9 +1,23 @@
-import { useState } from "react";
-import { UseDispatch, useSelector } from "react-redux";
+import { useState, useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
 function Search(){
     const [inputGifs, setInputGifs] = useState('');
-   const addGifs = (event) => {
+    const dispatch = useDispatch();
+   
+    useEffect(() => {
+        getGifs();
+      }, []);
+    
+     const getGifs = () => {
+      dispatch({ type: 'FETCH_GIFS'});
+     }
+    
+
+
+
+    const addGifs = (event) => {
     event.preventDefault();
+   
    }
     return(
             
