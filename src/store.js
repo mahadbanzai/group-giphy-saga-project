@@ -8,7 +8,7 @@ function* fetchGifs (action){
     try{
         let response = yield axios ({
             method: 'GET',
-            url: `?=${action.payload}`
+            url: `api/photos?=${action.payload}`
         })
             yield put ({
                 type: 'SET_GIFS',
